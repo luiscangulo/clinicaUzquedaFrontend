@@ -1,0 +1,28 @@
+.mat-tab-group {
+  position: relative;
+  top: 10px;
+  overflow: hidden;
+}
+
+mat-tab  {
+  overflow: hidden;
+}
+
+mat-tab-body  {
+  overflow: hidden;
+}
+
+mat-tab-body-content  {
+  overflow: hidden;
+}
+
+.mat-tab-group h2 {
+  text-align: center;
+  font-style: italic;
+  color: #020202;
+}
+
+.mat-tab-group div img {
+  width: 500px;
+  height: 500px;
+}

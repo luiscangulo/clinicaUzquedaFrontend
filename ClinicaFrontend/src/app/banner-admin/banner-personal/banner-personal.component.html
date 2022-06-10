@@ -1,0 +1,30 @@
+<div class="principal">
+  <div class="titulo" align="center">
+    <h2>Banner Personalizado</h2>
+  </div>
+  <div class="part-one">
+    <ngb-carousel class="banner">
+      <ng-template *ngFor="let i of images;" ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="i" alt="Random first slide">
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <br>
+  <br>
+  <div class="part-two">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <form [formGroup]="form">
+          <div class="row">
+            <h3>Por favor seleccione solamente 3 imagenes.</h3>
+            <div class="col">
+              <input formControlName="img" multiple (change)="capturarFile($event)" class="form-control" type="file"/>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

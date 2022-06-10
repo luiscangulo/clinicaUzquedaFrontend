@@ -1,0 +1,107 @@
+<div class="reg-cita">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Cambiar Estado</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Porfavor completar todos los campos para cambiar el estado de la cita y asignar odontolog.
+      </p>
+      <br>
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Identificaci&oacute;n:</mat-label>
+              <input matInput formControlName="id" class="form-control" type="text" required/>
+              <mat-error *ngIf="form.get('id').hasError('required')">
+                La Identificaci&oacute;n es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <button mat-raised-button type="submit" class="botondos" (click)="cargarData()">Buscar</button>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="especial" appearance="fill">
+              <mat-label>Tipo de Especialidad:</mat-label>
+              <mat-select formControlName="tipoespecialidad" required>
+                <mat-option value="Odontología General" selected>Odontología General</mat-option>
+                <mat-option value="Ortodoncia">Ortodoncia</mat-option>
+                <mat-option value="Implantología">Implantología</mat-option>
+                <mat-option value="Rehabilitación Oral">Rehabilitación Oral</mat-option>
+                <mat-option value="Periodoncia">Periodoncia</mat-option>
+                <mat-option value="Endodoncia">Endodoncia</mat-option>
+                <mat-option value="Cirugía Oral">Cirugía Oral</mat-option>
+                <mat-option value="Odontopediatría">Odontopediatría</mat-option>
+                <mat-option value="Estética Dental">Estética Dental</mat-option>
+                <mat-option value="Oclusión / Bruxismo y Trastornos Temporomandibulares (TTM)">Oclusión / Bruxismo y Trastornos Temporomandibulares (TTM)</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('tipoespecialidad').hasError('required')">
+                El Tipo de Especialidad es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="especial" appearance="fill">
+              <mat-label>Fecha de Cita:</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="fechacita" required/>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="form.get('fechacita').hasError('required')">
+                La Fecha de cita es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Hora de la Cita:</mat-label>
+              <input matInput type="text" formControlName="hora" class="form-control" required/>
+              <mat-error *ngIf="form.get('hora').hasError('required')">
+                La Hora es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="especial" appearance="fill">
+              <mat-label>Estado:</mat-label>
+              <mat-select formControlName="estado" required>
+                <mat-option value="sala espera">Sala espera</mat-option>
+                <!--<mat-option value="cancelado">Cancelado</mat-option>-->
+                <mat-option value="esta en el box">Esta en el Box</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('estado').hasError('required')">
+                El estado nuevo es requerido.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="especial" appearance="fill">
+              <mat-label>Odontologo:</mat-label>
+              <mat-select formControlName="odontologo">
+                <mat-option value="{{concepto}}"  *ngFor = "let concepto of listaOdontologo;">{{concepto}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('odontologo').hasError('required')">
+                El odontologo es requerido.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <button mat-raised-button class="boton" type="submit" color="primary" (click)="actualizarEstado()">Guardar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,27 @@
+
+.titulo-registro {
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  right: 0px;
+  height: 30px;
+  align-items: center;
+  color: black;
+}
+
+ .row1 {
+  position: fixed;
+  top: 250px;
+  left: 300px;
+  right: 0;
+  height: 30px;
+  align-items: center;
+  display: flex;
+  color: white;
+}
+
+registro-principal .row1 button {
+  margin: 0 8px;
+  padding: 1em 2em;
+}
+

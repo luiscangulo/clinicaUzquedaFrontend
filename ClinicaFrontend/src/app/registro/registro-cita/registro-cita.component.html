@@ -1,0 +1,93 @@
+<div class="reg-cita">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Registro de Citas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Horario de Atencion solo de lunes a viernes de 8 a.m. - 5 p.m. Y los sabados de 8 a.m. - 1 p.m.
+      </p>
+      <hr>
+      <br>
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col">
+            <p>
+              Porfavor completar todos los campos para registrar la cita.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Identificaci&oacute;n:</mat-label>
+              <input matInput formControlName="id" class="form-control" type="text" required/>
+              <mat-error *ngIf="form.get('id').hasError('required')">
+                La Identificaci&oacute;n es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <!--
+          <div class="col">
+            <button mat-raised-button type="submit" color="primary" (click)="cargarData()">Buscar</button>
+          </div>
+          -->
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="especial" appearance="fill">
+              <mat-label>Tipo de Especialidad:</mat-label>
+              <mat-select [(value)]="selected" formControlName="tipoespecialidad">
+                <mat-option value="Odontología General" selected>Odontología General</mat-option>
+                <mat-option value="Ortodoncia">Ortodoncia</mat-option>
+                <mat-option value="Implantología">Implantología</mat-option>
+                <mat-option value="Rehabilitación Oral">Rehabilitación Oral</mat-option>
+                <mat-option value="Periodoncia">Periodoncia</mat-option>
+                <mat-option value="Endodoncia">Endodoncia</mat-option>
+                <mat-option value="Cirugía Oral">Cirugía Oral</mat-option>
+                <mat-option value="Odontopediatría">Odontopediatría</mat-option>
+                <mat-option value="Estética Dental">Estética Dental</mat-option>
+                <mat-option value="Oclusión / Bruxismo y Trastornos Temporomandibulares (TTM)">Oclusión / Bruxismo y Trastornos Temporomandibulares (TTM)</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('tipoespecialidad').hasError('required')">
+                El Tipo de Especialidad es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Fecha de la cita:</mat-label>
+              <input matInput (dateChange)="capturar()" [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="fechacita" required/>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="form.get('fechacita').hasError('required')">
+                La Fecha de la Cita es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Hora de la Cita:</mat-label>
+              <mat-select formControlName="hora" required>
+                <mat-option value="0">Selecciona una opci&oacute;n</mat-option>
+                <mat-option value="{{i.substr(0,5)}}" *ngFor="let i of listahoras;">{{i}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.get('hora').hasError('required')">
+                La Hora es requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <button mat-raised-button class="boton" type="submit" color="primary" (click)="crearData()">Registrar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,146 @@
+<div class="fichapaciente">
+  <div class="fichaone">
+    <div class="tabla">
+      <table class="table table-hover">
+        <thead class="text-center">
+        <tr>
+          <th colspan="2">Datos Paciente</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Identificaci&oacute;n:</th>
+          <td>{{ listaPaciente[0] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Tipo de Identificaci&oacute;n:</th>
+          <td>{{ listaPaciente[1] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Nombre:</th>
+          <td>{{ listaPaciente[2] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Apellido:</th>
+          <td>{{ listaPaciente[3] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Email:</th>
+          <td>{{ listaPaciente[4] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Celular:</th>
+          <td>{{ listaPaciente[5] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Fecha de Nacimiento:</th>
+          <td>{{ listaPaciente[6] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Departamento:</th>
+          <td>{{ listaPaciente[7] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Ciudad:</th>
+          <td>{{ listaPaciente[8] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Pa&iacute;s:</th>
+          <td>{{ listaPaciente[9] }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="buscar-general">
+      <div class="buscar-paciente">
+        <form [formGroup]="formBuscar">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Ficha del Paciente</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <br>
+              <p>Para listar la ficha del paciente en la tabla Historial odontológico del Paciente, se debe buscar por el Numero de Identificaci&oacute;n</p>
+              <br>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field class="identificacion">
+                    <mat-label>Identificaci&oacute;n:</mat-label>
+                    <input matInput formControlName="id" class="form-control" type="text"/>
+                  </mat-form-field>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col">
+                  <button mat-raised-button appDebounceClick class="botonb" type="button" color="primary" (click)="cargarData()"
+                          (debounceClick)="log()" [debounceTime]="500">Buscar
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </form>
+      </div>
+      <div class="buscar-historial">
+        <form [formGroup]="formHistorial">
+          <mat-card class="example-card-one">
+            <mat-card-content>
+              <p>Por favor llenar todos los siguientes campos requeridos *</p>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field class="large-textarea" appearance="fill">
+                    <mat-label>Descripci&oacute;n*</mat-label>
+                    <textarea matInput formControlName="descripcion" #message maxlength="1000"></textarea>
+                    <mat-hint align="start"><strong>Descripci&oacute;n breve y corta.</strong> </mat-hint>
+                    <mat-hint align="end">{{message.value.length}} / 1000</mat-hint>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field class="odonto" appearance="fill">
+                    <mat-label>Odontologo*</mat-label>
+                    <mat-select formControlName="odontologo">
+                      <mat-option value="{{concepto}}" *ngFor="let concepto of listaOdontologo;">{{concepto}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button mat-raised-button class="boton" type="submit" color="primary" (click)="guardarHistorial()">Guardar</button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="tablahistorial">
+    <h1 align="center" style="font-family: sans-serif;"><b>Historial odontológico del Paciente</b></h1>
+    <br>
+    <table class="table table-hover" align="center">
+      <thead class="text-center">
+      <tr>
+        <th scope="col">Fecha</th>
+        <th colspan="2">Evoluci&oacute;n</th>
+        <th scope="col">Paciente</th>
+        <th scope="col">Odontologo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let element of res;">
+        <td>{{ element[0].date }}</td>
+        <td colspan="2" align="justify">{{ element[0].describe }}</td>
+        <td>{{ element[0].name }}</td>
+        <td>{{ element[0].parent }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

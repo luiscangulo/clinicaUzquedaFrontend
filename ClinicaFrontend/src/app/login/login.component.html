@@ -1,0 +1,46 @@
+<div class="rg" style="width: 200px; height: 200px;">
+  <div class="main-div">
+<mat-card>
+  <mat-card-title>Bienvenido</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm">
+      <p>
+        <mat-form-field appearance="fill">
+          <input type="email" matInput placeholder="Usuario" formControlName="email"/>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <input type="password" matInput placeholder="Contraseña" formControlName="password"/>
+        </mat-form-field>
+      </p>
+      <p align="right"><a routerLink="/recuperacion-contrasena" routerLinkActive="active">¿Olvido la Contraseña?</a></p>
+      <p>
+        Digita el Captcha:
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="captcha" type="text" class="captchastyle" placeholder="{{mostrarCaptcha}}" readonly>
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="cap()">
+            <img class="imagenicon" src="assets/img/refresh.jpg">
+          </button>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <input matInput type="text" formControlName="textinput">
+        </mat-form-field>
+      </p>
+      <br>
+      <button class="btn" type="submit" mat-raised-button (click)="onLogin()">Login</button>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <p>¿No tienes una cuenta? <span><a routerLink="/registro/registro-paciente-sin-registrar" routerLinkActive="active">Registrese ahora</a></span></p>
+    </form>
+  </mat-card-content>
+</mat-card>
+  </div>
+</div>
+

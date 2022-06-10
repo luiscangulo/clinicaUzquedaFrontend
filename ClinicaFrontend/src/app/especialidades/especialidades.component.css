@@ -1,0 +1,154 @@
+.especialidades {
+  padding: 1em 2em;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  top: 500px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  background: #51D1F6;
+  font-weight: 600;
+}
+
+.especialidades h1 {
+  float: right;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.especialidades h1 span{
+  color: #020202;
+}
+.informacione {
+  position: relative;
+  top: 500px;
+  background: #51D1F6;
+}
+.containere{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 0px;
+  text-align: center;
+}
+.lbl-menu-e{
+  background: #51D1F6;
+}
+.lbl-menu-e label{
+  display: inline-block;
+  padding: 20px;
+  color: #020202;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+.lbl-menu-e label:hover{
+  background: #099ec1;
+}
+.contente{
+  position: relative;
+}
+.contente div{
+  position: absolute;
+  line-height: 1.8;
+  transition: all 600ms ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.90);
+  padding: 30px;
+  background: #fff;
+  padding-bottom: 40px;
+}
+#eradio1,#eradio2,#eradio3,#eradio4,#eradio5,#eradio6,#eradio7,#eradio8,#eradio9,#eradio10{
+  display: none;
+}
+#eradio1:checked ~ .etab1,
+#eradio2:checked ~ .etab2,
+#eradio3:checked ~ .etab3,
+#eradio4:checked ~ .etab4,
+#eradio5:checked ~ .etab5,
+#eradio6:checked ~ .etab6,
+#eradio7:checked ~ .etab7,
+#eradio8:checked ~ .etab8,
+#eradio9:checked ~ .etab9,
+#eradio10:checked ~ .etab10
+{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  width: 100%;
+  display: flex;
+}
+.contente div:after{
+  position: absolute;
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  bottom: 100%;
+  left: 100px;
+}
+.contente .etab2:after{
+  left: 300px;
+}
+.contente .etab3:after{
+  left: 440px;
+}
+.contente .etab4:after{
+  left: 630px;
+}
+.contente .etab5:after{
+  left: 820px;
+}
+.contente .etab6:after{
+  left: 960px;
+}
+.contente .etab7:after{
+  left: 1100px;
+}
+.contente .etab8:after{
+  left: 200px;
+}
+.contente .etab9:after{
+  left: 390px;
+}
+.contente .etab10:after{
+  left: 780px;
+}
+
+p {
+  width: 60%;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 40%;
+  height: 400px;
+  margin: 0 60px;
+}
+
+.ptexto {
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.titulo {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.arriba{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  background: url(src/assets/svg/arriba.svg);
+  right: 0.5em;
+  bottom: 1em;
+}
+
+

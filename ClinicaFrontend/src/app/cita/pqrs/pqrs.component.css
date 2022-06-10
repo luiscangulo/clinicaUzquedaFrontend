@@ -1,0 +1,36 @@
+.reg-cita {
+  top: 80px;
+}
+
+.example-card {
+  max-width: 1200px;
+  left: 100px;
+}
+
+.row .col .mat-form-field + .mat-form-field {
+  margin-left: 12px;
+  align-items: center;
+}
+
+.row .col .botoncentral {
+  width: 200px;
+  align-items: center;
+  left: 100px;
+  color: #ffffff;
+  background-color: #3B83BD;
+}
+.large-textarea {
+  font-family: sans-serif;
+  height: auto;
+  width: 350px;
+  background: white;
+}
+
+table{
+  align-items: center;
+}
+button {
+  max-width: 200px;
+  color: #ffffff;
+  background-color: #3B83BD;
+}

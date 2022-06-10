@@ -1,0 +1,116 @@
+
+.nosotros {
+  padding: 1em 2em;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  top: 80px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  background: #51D1F6;
+  font-weight: 600;
+}
+
+.nosotros h1 {
+  float: right;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nosotros h1 span{
+  color: #020202;
+}
+.informacion {
+  position: relative;
+  top: 80px;
+  background: #51D1F6;
+}
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 0px;
+  text-align: center;
+}
+.lbl-menu{
+  background: #51D1F6;
+}
+.lbl-menu label{
+  display: inline-block;
+  padding: 20px;
+  color: #020202;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+.lbl-menu label:hover{
+  background: #099ec1;
+}
+.content{
+  position: relative;
+}
+.content div{
+  position: absolute;
+  line-height: 1.8;
+  transition: all 600ms ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.90);
+  padding: 30px;
+  background: #fff;
+  padding-bottom: 40px;
+}
+#radio1,#radio2,#radio3{
+  display: none;
+}
+#radio1:checked ~ .tab1,
+#radio2:checked ~ .tab2,
+#radio3:checked ~ .tab3
+{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  width: 100%;
+  display: flex;
+}
+.content div:after {
+  position: absolute;
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  bottom: 100%;
+  left: 500px;
+}
+.content .tab2:after{
+  left: 630px;
+}
+.content .tab3:after{
+  left: 725px;
+}
+
+p {
+  width: 60%;
+  font-family: sans-serif;
+  font-size: large;
+}
+
+img {
+  max-width: 40%;
+  height: 300px;
+  margin: 0 60px;
+}
+
+.arriba{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  background: url(src/assets/svg/arriba.svg);
+  right: 0.5em;
+  bottom: 1em;
+}

@@ -1,0 +1,27 @@
+.rg {
+  position: fixed;
+  top: 65px;
+  left: 0px;
+  right: 0px;
+  height: 10000px;
+}
+.btn{
+  color: #ffffff;
+  background-color: #3B83BD;
+  width: 100%;
+}
+.mat-card{
+  margin:0 auto;
+  display:inline-block;
+
+}
+.main-div{
+  top:30%;
+  width:100%;
+  text-align:center;
+  position:fixed;
+}
+.mat-form-field{
+  width: 100%;
+  min-width: 300px;
+}

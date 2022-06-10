@@ -1,0 +1,144 @@
+<div class="agenda">
+  <div class="row text-center">
+    <h3>Agenda</h3>
+  </div>
+  <div class="odonto">
+    <form [formGroup]="form">
+      <mat-form-field class="odon" appearance="fill">
+        <mat-label>Odontologo</mat-label>
+        <mat-select formControlName="odontologo" (selectionChange)="cargarData()">
+          <mat-option value="{{concepto}}" *ngFor="let concepto of listaOdontologo;">{{concepto}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="tabla">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th colspan="5">Estados de la cita</th>
+      </tr>
+      <tr>
+        <th>Pendiente</th>
+        <th>Cancelado</th>
+        <th>Sala de Espera</th>
+        <th>Confirmado</th>
+        <th>Esta en el Box</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="e1p"></td>
+        <td class="e2p"></td>
+        <td class="e3p"></td>
+        <td class="e4p"></td>
+        <td class="e5p"></td>
+      </tr>
+      <tr>
+        <td class="e1s"></td>
+        <td class="e2s"></td>
+        <td class="e3s"></td>
+        <td class="e4s"></td>
+        <td class="e5s"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Anterior
+        </div>
+        <div
+          class="btn btn-outline-secondary"
+          mwlCalendarToday
+          [(viewDate)]="viewDate"
+        >
+          Hoy
+        </div>
+        <div
+          class="btn btn-primary"
+          mwlCalendarNextView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Siguiente
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+    <div class="col-md-4">
+      <div class="btn-group">
+        <div
+          class="btn btn-primary"
+          (click)="setView(CalendarView.Month)"
+          [class.active]="view === CalendarView.Month"
+        >
+          Mes
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="setView(CalendarView.Week)"
+          [class.active]="view === CalendarView.Week"
+        >
+          Semana
+        </div>
+        <div
+          class="btn btn-primary"
+          (click)="setView(CalendarView.Day)"
+          [class.active]="view === CalendarView.Day"
+        >
+          Dia
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div [ngSwitch]="view" [ngStyle]="{'color' : 'black'}">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [dayStartHour]="dayStartHour"
+      [dayStartMinute]="dayStartMinute"
+      [dayEndHour]="dayEndHour"
+      [dayEndMinute]="dayEndMinute"
+      [hourSegments]="hourSegments"
+      [hourSegmentHeight]="hourSegmentHeight"
+    >
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="CalendarView.Day"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [dayStartHour]="dayStartHour"
+      [dayStartMinute]="dayStartMinute"
+      [dayEndHour]="dayEndHour"
+      [dayEndMinute]="dayEndMinute"
+      [hourSegments]="hourSegments"
+      [hourSegmentHeight]="hourSegmentHeight"
+    >
+    </mwl-calendar-day-view>
+  </div>
+</div>

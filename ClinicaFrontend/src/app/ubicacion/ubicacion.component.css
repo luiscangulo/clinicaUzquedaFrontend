@@ -1,0 +1,91 @@
+.ubicacion {
+  padding: 1em 2em;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  top: 1350px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  background: #51D1F6;
+  font-weight: 600;
+}
+
+.ubicacion h1 {
+  float: right;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ubicacion h1 span{
+  color: #020202;
+}
+
+.ubicacionfooter {
+  padding: 1em 2em;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  top: 1580px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  background: #51D1F6;
+  font-weight: 600;
+}
+
+.ubicacionfooter h4 {
+  float: right;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ubicacionfooter h4 span{
+  color: #020202;
+}
+
+.arriba{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  background: url(src/assets/svg/arriba.svg);
+  right: 5em;
+  bottom: 1em;
+}
+.iconoubicacion{
+  width: 2rem;
+  height: 2rem;
+  background: url(src/assets/img/imagenesclinica/metro_santiago_cl.png);
+}
+
+.ubicacionimagen {
+  padding: 1em 2em;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  top: 1570px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+.ubicacionimagen iframe{
+  border: 1px;
+  height: 480px;
+  width: 100%;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}

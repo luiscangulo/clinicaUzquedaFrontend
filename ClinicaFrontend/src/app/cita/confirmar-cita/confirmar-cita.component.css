@@ -1,0 +1,47 @@
+.reg-cita {
+  top: 80px;
+}
+
+.example-card {
+  max-width: 1000px;
+  left: 100px;
+}
+
+.row .col .mat-form-field + .mat-form-field {
+  margin-left: 12px;
+  align-items: center;
+}
+
+.row .boton {
+  max-width: 200px;
+  align-items: center;
+  left: 300px;
+  color: #ffffff;
+  background-color: #3B83BD;
+}
+
+.botondos {
+  color: #ffffff;
+  background-color: #3B83BD;
+}
+
+.botonconfirmar {
+  color: #ffffff;
+  background-color: #3B83BD;
+}
+
+.botoncancelar {
+  color: #020202;
+  background-color: #e3bc08;
+}
+
+.especial {
+  width: 250px;
+  align-items: center;
+  border-color: #020202;
+}
+
+.row .colemail {
+  max-width: 250px;
+  align-items: center;
+}

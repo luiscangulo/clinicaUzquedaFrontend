@@ -1,0 +1,72 @@
+<div class="reg-cita">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>P.Q.R.S.</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Formulario para llenar Peticiones, Quejas, Reclamos, y Sugerencias.
+      </p>
+      <p>
+        Para obtener las respuestas, por favor digite el campo de la identificaci&oacute;n para mostrar sus respuestas.
+      </p>
+      <br>
+      <br>
+      <form [formGroup]="form">
+        <div class="row" align="center">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Identificaci&oacute;n:</mat-label>
+              <input matInput formControlName="id" class="form-control" type="text"/>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Tipo PQRS</mat-label>
+              <mat-select formControlName="pqrs">
+                <mat-option value="{{concepto}}" *ngFor="let concepto of lista;">{{concepto}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row" align="center">
+          <div class="col">
+            <mat-form-field class="large-textarea" appearance="fill">
+              <mat-label>Descripci&oacute;n</mat-label>
+              <textarea matInput formControlName="descripcion" #message maxlength="1000"></textarea>
+              <mat-hint align="start"><strong>Descripci&oacute;n breve y corta.</strong> </mat-hint>
+              <mat-hint align="end">{{message.value.length}} / 1000</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row" align="center" >
+          <div class="col">
+            <button class="botoncentral" mat-raised-button appDebounceClick type="button" color="primary" (click)="envio()" (debounceClick)="log()" [debounceTime]="500">Enviar</button>
+          </div>
+          <div class="col">
+            <button class="botoncentral" mat-raised-button appDebounceClick type="button" color="primary" (click)="cargarTabla()" (debounceClick)="log()" [debounceTime]="500">Mostrar Respuesta</button>
+          </div>
+        </div>
+        <!-- DATOS DEL PACIENTE -->
+        <br>
+        <br>
+        <table class="table table-hover">
+          <thead class="text-center">
+          <tr align="center">
+            <th scope="col">Tipo de Solicitud</th>
+            <th colspan="2">Respuesta</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let element of res;">
+            <td align="center">{{ element[0].date }}</td>
+            <td colspan="2" align="justify">{{ element[0].name }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,71 @@
+
+.agenda {
+  position: relative;
+  top: 0px;
+}
+
+.agenda .tabla {
+  padding: 1em 2em;
+  left: 200px;
+  right: 200px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  text-align: center;
+}
+
+.odonto form .odon {
+  width: 300px;
+  align-items: center;
+  left: 550px;
+}
+
+.agenda h3 {
+  text-align: center;
+  font-style: italic;
+  color: #020202;
+}
+
+.agenda .tabla tbody tr .e1p {
+  background: #ad2121;
+}
+
+.agenda .tabla tbody tr .e2p {
+  background: #535454;
+}
+
+.agenda .tabla tbody tr .e3p {
+  background: #e3bc08;
+}
+
+.agenda .tabla tbody tr .e4p {
+  background: #66189f;
+}
+
+.agenda .tabla tbody tr .e5p {
+  background: #109b37;
+}
+
+.agenda .tabla tbody tr.e1s {
+  background: #f8d8d8;
+}
+
+.agenda .tabla tbody tr .e2s {
+  background: #b5b5b5;
+}
+
+.agenda .tabla tbody tr .e3s {
+  background: #fcf0c2;
+}
+
+.agenda .tabla tbody tr .e4s {
+  background: #c4aaf5;
+}
+
+.agenda .tabla tbody tr .e5s {
+  background: #95f1c0;
+}
+
+.my-custom-class span {
+  color: #020202;
+}

@@ -1,0 +1,41 @@
+.rg {
+  position: relative;
+  top: 65px;
+  left: 0px;
+  right: 0px;
+}
+.btn{
+  color: #ffffff;
+  background-color: #3B83BD;
+  width: 100%;
+}
+.mat-card{
+  margin:0 auto;
+  display:inline-block;
+
+}
+.main-div{
+  top:0px;
+  width:100%;
+  left: 525px;
+  text-align:center;
+  position:relative;
+}
+.mat-form-field{
+  width: 100%;
+  min-width: 300px;
+}
+
+.imagenicon{
+  width: 50px;
+  height: 50px;
+}
+
+.captchastyle {
+  font-weight: bold;
+  font-size: x-large;
+  align-items: center;
+  /*text-decoration: line-through;*/
+  text-shadow: 2px 2px;
+  background-color: #c7d4d2;
+}

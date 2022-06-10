@@ -1,0 +1,104 @@
+.fichapaciente {
+  left: 200px;
+  display: inline-block;
+}
+
+.fichaone {
+  top: 80px;
+  display: inline-flex;
+  left: 150px;
+}
+
+.tablahistorial {
+  width: 800px;
+  left: 200px;
+  margin: 0 auto;
+}
+h3 {
+
+}
+
+.buscar-general {
+  display: inline-block;
+}
+
+.buscar-paciente {
+  width: 800px;
+  left: 100px;
+}
+
+.buscar-historial {
+  width: 800px;
+  left: 100px;
+}
+
+.tabla {
+  width: 400px;
+  left: 100px;
+}
+
+.example-card {
+  max-width: 800px;
+}
+
+.example-card-one {
+  max-width: 800px;
+}
+
+.example-card form .row .col .mat-form-field + .mat-form-field {
+  margin-left: 10px;
+  align-items: center;
+}
+
+.example-card-one form .row .col .mat-form-field + .mat-form-field {
+  margin-left: 10px;
+  align-items: center;
+}
+
+.large-textarea {
+  font-family: sans-serif;
+  height: 10em;
+  width: 700px;
+}
+
+.row .col .boton {
+  width: 200px;
+  align-items: center;
+  left: 250px;
+  color: #ffffff;
+  background-color: #3B83BD;
+}
+
+.row .col .botonb {
+  width: 200px;
+  left: 250px;
+  color: #ffffff;
+  background-color: #3B83BD;
+}
+
+.row .col .odonto {
+  width: 300px;
+  align-items: center;
+  left: 200px;
+}
+
+.example-card form .row .col .boton + .boton {
+  margin-left: 8px;
+  align-items: center;
+}
+
+form .row .col .mat-form-field {
+  font-weight: bold;
+  color: #020202;
+}
+
+.tabla table {
+  font-weight: bold;
+  color: #020202;
+}
+
+.row .col .identificacion {
+  width: 200px;
+  align-items: center;
+  left: 250px;
+}

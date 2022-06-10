@@ -1,0 +1,23 @@
+img {
+  width: 30px;
+  height: 30px;
+}
+.imagen{
+  width: 80px;
+  height: 80px;
+}
+
+.clinica {
+  padding: 0 2px;
+  margin: 0 2px;
+}
+
+.navbar{
+  background-color: #51D1F6;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+

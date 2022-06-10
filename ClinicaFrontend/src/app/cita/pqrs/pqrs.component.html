@@ -1,0 +1,53 @@
+<div class="reg-cita">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>P.Q.R.S.</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        De click en el boton ver tabla para observar las P.Q.R.S. y poder responder.
+      </p>
+      <br>
+      <br>
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col">
+            <button class="botoncentral" appDebounceClick (click)="cargar()" mat-raised-button color="primary" (debounceClick)="log()" [debounceTime]="500">
+              Ver Tabla
+            </button>
+          </div>
+        </div>
+        <br>
+        <table class="table table-bordered border-primary">
+          <thead class="text-center">
+          <tr>
+            <th scope="col">Tipo de Solicitud</th>
+            <th scope="col">Descripci&oacute;n</th>
+            <th colspan="3">Respuesta</th>
+            <th scope="col">Enviar</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let element of res; index as i">
+            <td align="center">{{ element[0].date }}</td>
+            <td align="justify">{{ element[0].name }}</td>
+            <td colspan="3" align="center">
+              <mat-form-field class="large-textarea" appearance="fill">
+                <mat-label>Respuesta</mat-label>
+                <textarea matInput formControlName="respuesta" #message maxlength="1000" required></textarea>
+                <mat-hint align="start"><strong>Descripci&oacute;n breve y corta.</strong> </mat-hint>
+                <mat-hint align="end">{{message.value.length}} / 1000</mat-hint>
+              </mat-form-field>
+            </td>
+            <td align="center">
+              <button (click)="enviopqrs(i)" mat-raised-button>
+                Enviar
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

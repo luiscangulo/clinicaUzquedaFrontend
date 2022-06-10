@@ -1,0 +1,95 @@
+<!--
+<nav class="navbar navbar-default" role="navigation" id="homeprincipal">
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+      <li>
+        <a aria-current="page" routerLink="/home" routerLinkActive="active"> <img src="assets/img/home.png">   Home</a>
+      </li>
+      <li *ngIf="isLogged === false">
+        <a routerLink="/login" routerLinkActive="active">Iniciar Sesi&oacute;n</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link m-2 p-3  blockquote" routerLink="/registro/registro-home" routerLinkActive="active">Usuario</a>
+      </li>
+
+      <li *ngIf="isLogged === true">
+        <a aria-current="page" (click)="dirigirRuta()">Servicios</a>
+      </li>
+    </ul>
+    <span class="clinica blockquote"><img src="assets/img/imagenesclinica/CDA_logo_con_sombra.jpg">    Clinica Dental Alameda</span>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="isLogged === true">
+        <a aria-current="page" (click)="onLogout()">Cerrar Sesi&oacute;n</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+-->
+
+<!--
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <span class="clinica blockquote"><img src="assets/img/imagenesclinica/CDA_logo_con_sombra.jpg">    Clinica Dental Alameda</span>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+    <ul class="navbar-nav flex-row w-100">
+      <li class="nav-item px-2 mr-auto active">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active"> <img src="assets/img/home.png">   Home</a>
+      </li>
+      <li class="nav-item px-2 mr-auto active" *ngIf="isLogged === false">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar Sesi&oacute;n</a>
+      </li>
+
+      <li class="nav-item px-2 mr-auto active">
+        <a class="nav-link m-2 p-3  blockquote" routerLink="/registro/registro-home" routerLinkActive="active">Usuario</a>
+      </li>
+
+      <li class="nav-item px-2 mr-auto active" *ngIf="isLogged === true">
+        <a class="nav-link" aria-current="page" (click)="dirigirRuta()">Servicios</a>
+      </li>
+
+      <li class="nav-item px-2" *ngIf="isLogged === true">
+        <a class="nav-link" aria-current="page" (click)="onLogout()">Cerrar Sesi&oacute;n</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+-->
+
+
+
+<nav class="navbar navbar-expand-lg" id="homeprincipal">
+  <a class="nav-link blockquote" style="color: #020202" routerLink="/home" routerLinkActive="active"><img src="assets/img/home.png">    Home <span class="sr-only">(current)</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!--
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active"><img src="assets/img/home.png">    Home <span class="sr-only">(current)</span></a>
+      </li>
+-->
+      <li class="nav-item" *ngIf="isLogged === false">
+        <a class="cursor nav-link blockquote" style="color: #020202" routerLink="/login" routerLinkActive="active">Iniciar Sesi&oacute;n</a>
+      </li>
+
+      <li class="nav-item" *ngIf="isLogged === true">
+        <a class="cursor nav-link blockquote" style="color: #020202" (click)="dirigirRuta()">Servicios</a>
+      </li>
+
+      <li class="nav-item" *ngIf="isLogged === true">
+        <a class="cursor nav-link blockquote" style="color: #020202" (click)="onLogout()">Cerrar Sesi&oacute;n</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <span class="clinica blockquote"><img class="imagen" src="assets/img/imagenesclinica/CDA_logo_Transparente.png">    Clinica Dental Alameda</span>
+    </form>
+  </div>
+</nav>
+<router-outlet></router-outlet>
